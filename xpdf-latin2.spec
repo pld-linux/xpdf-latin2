@@ -2,7 +2,7 @@ Summary:	Latin2 encoding support for xpdf
 Summary(pl):	Wsparcie kodowania Latin2 dla xpdf
 Name:		xpdf-latin2
 Version:	1.0
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.foolabs.com/pub/xpdf/%{name}.tar.gz
@@ -12,6 +12,7 @@ Requires(post,preun):	grep
 Requires(post,preun):	xpdf
 Requires(preun):	fileutils
 Requires:	xpdf
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
