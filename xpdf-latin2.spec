@@ -1,8 +1,8 @@
-Summary:	Latin2 support for xpdf
-Summary(pl):	Wsparcie kodowania latin2 dla xpdf
+Summary:	Latin2 encoding support for xpdf
+Summary(pl):	Wsparcie kodowania Latin2 dla xpdf
 Name:		xpdf-latin2
 Version:	1.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.foolabs.com/pub/xpdf/%{name}.tar.gz
@@ -17,11 +17,15 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The Xpdf language support packages include CMap files, text encodings,
 and various other configuration information necessary or useful for
 specific character sets. (They do not include any fonts.) 
+This package provides support files needed to use the Xpdf tools with
+Latin2 PDF files.
 
 %description -l pl
 Pakiety wspieraj±ce jêzyki Xpdf zawieraj± pliki CMap, kodowania oraz
 ró¿ne inne informacje konfiguracyjne niezbêdne b±d¼ przydatne przy
 okre¶lonych zestawach znaków. (Nie zawieraj± ¿adnych fontów).
+Ten pakiet zawiera pliki potrzebne do u¿ywania narzêdzi Xpdf z plikami
+PDF o kodowaniu Latin2.
 
 %prep
 %setup -q -n %{name}
@@ -37,10 +41,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 if [ ! -f /etc/xpdfrc ]; then
-	echo "unicodeMap      Latin2  /usr/X11R6/share/xpdf/Latin2.unicodeMap" >> /etc/xpdfrc
+	echo 'unicodeMap	Latin2	/usr/X11R6/share/xpdf/Latin2.unicodeMap' >> /etc/xpdfrc
 else
- if ! grep -qi '/usr/X11R6/share/xpdf/Latin2.unicodeMap' /etc/xpdfrc; then
-	echo "unicodeMap      Latin2  /usr/X11R6/share/xpdf/Latin2.unicodeMap" >> /etc/xpdfrc
+ if ! grep -q /usr/X11R6/share/xpdf/Latin2.unicodeMap /etc/xpdfrc; then
+	echo 'unicodeMap	Latin2	/usr/X11R6/share/xpdf/Latin2.unicodeMap' >> /etc/xpdfrc
  fi
 fi
 
