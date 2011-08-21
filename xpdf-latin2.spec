@@ -1,12 +1,12 @@
 Summary:	Latin2 encoding support for xpdf
-Summary(pl.UTF-8):	Wsparcie kodowania Latin2 dla xpdf
+Summary(pl.UTF-8):	Obsługa kodowania Latin2 dla xpdf
 Name:		xpdf-latin2
-Version:	1.0
-Release:	7
-License:	GPL
+Version:	20110815
+Release:	1
+License:	GPL v2 or GPL v3
 Group:		X11/Applications
-Source0:	ftp://ftp.foolabs.com/pub/xpdf/%{name}.tar.gz
-# Source0-md5:	ac19ef990cd63afd2837c10dc7e1c3ab
+Source0:	ftp://ftp.foolabs.com/pub/xpdf/%{name}-2011-aug-15.tar.gz
+# Source0-md5:	c135fe93f933edaa0f042a8d3cc9f799
 URL:		http://www.foolabs.com/xpdf/
 Requires(post,preun):	grep
 Requires(post,preun):	xpdf
@@ -25,7 +25,7 @@ Latin2 PDF files.
 %description -l pl.UTF-8
 Pakiety wspierające języki Xpdf zawierają pliki CMap, kodowania oraz
 różne inne informacje konfiguracyjne niezbędne bądź przydatne przy
-określonych zestawach znaków. (Nie zawierają żadnych fontów).
+określonych zestawach znaków (nie zawierają żadnych fontów).
 Ten pakiet zawiera pliki potrzebne do używania narzędzi Xpdf z plikami
 PDF o kodowaniu Latin2.
 
@@ -61,4 +61,4 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc README add-to-xpdfrc
-%{_datadir}/xpdf/*
+%{_datadir}/xpdf/Latin2.unicodeMap
